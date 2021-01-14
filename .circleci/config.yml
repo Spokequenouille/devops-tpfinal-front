@@ -14,3 +14,8 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}-{{ .Environment.CACHE_VERSION }}
           paths: 
             - node_modules
+
+workflows:
+  build_deploy: 
+    jobs: 
+      - install
